@@ -7,10 +7,8 @@ cd openwrt
 wget https://raw.githubusercontent.com/titobrasolin/openwrt/master/feeds.conf
 ./scripts/feeds update -a
 ./scripts/feeds install -a
-cd feeds
-wget https://dev.openwrt.org/raw-attachment/ticket/19872/qt_not_available_from_nokia.patch
-patch -p0 < qt_not_available_from_nokia.patch
-cd ..
-mv .config .config.old.1
+curl https://dev.openwrt.org/raw-attachment/ticket/19872/qt_not_available_from_nokia.patch \
+  | patch -d feeds -p0
+mv -b .config .config.old
 wget https://raw.githubusercontent.com/titobrasolin/openwrt/master/.config
-make
+time make -j1 V=s
