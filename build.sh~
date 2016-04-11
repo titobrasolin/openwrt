@@ -21,7 +21,6 @@ echo "==========================================================================
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
-curl https://raw.githubusercontent.com/titobrasolin/openwrt/master/feeds_xorg_xorg_lib_libX11_disable_specs.patch | patch -d feeds -p0
 curl https://dev.openwrt.org/raw-attachment/ticket/19872/qt_not_available_from_nokia.patch | patch -d feeds -p0
 curl https://raw.githubusercontent.com/titobrasolin/openwrt/master/config.diff > .config
 make defconfig
