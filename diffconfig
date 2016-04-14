@@ -26,8 +26,6 @@ CONFIG_PACKAGE_libtiff=y
 CONFIG_PACKAGE_qt4=y
 CONFIG_PACKAGE_qt4-dbus=y
 CONFIG_PACKAGE_qt4-xml=y
-# CONFIG_PACKAGE_uboot-sunxi-A10-OLinuXino-Lime is not set
-CONFIG_PACKAGE_uboot-sunxi-A20-OLinuXino-Lime=y
 CONFIG_PACKAGE_zlib=y
 CONFIG_SSP_SUPPORT=y
 CONFIG_STRIP_ARGS="--strip-all"
