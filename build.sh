@@ -23,6 +23,6 @@ echo "==========================================================================
 
 curl https://raw.githubusercontent.com/titobrasolin/openwrt/master/feeds_xorg_xorg_lib_libX11_disable_specs.patch | patch -d feeds -p0
 curl https://dev.openwrt.org/raw-attachment/ticket/19872/qt_not_available_from_nokia.patch | patch -d feeds -p0
-curl https://raw.githubusercontent.com/titobrasolin/openwrt/master/config.diff > .config
+curl https://raw.githubusercontent.com/titobrasolin/openwrt/master/diffconfig > .config
 make defconfig
 time make -j1 V=s
