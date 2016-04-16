@@ -25,4 +25,5 @@ curl https://raw.githubusercontent.com/titobrasolin/openwrt/master/feeds_xorg_xo
 curl https://dev.openwrt.org/raw-attachment/ticket/19872/qt_not_available_from_nokia.patch | patch -d feeds -p0
 curl https://raw.githubusercontent.com/titobrasolin/openwrt/master/diffconfig > .config
 make defconfig
-time make -j1 V=s
+# https://wiki.openwrt.org/doc/faq/development#building_on_multi-core_cpu
+time make -j$(($(nproc)+1)) V=s
