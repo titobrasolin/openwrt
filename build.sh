@@ -26,4 +26,4 @@ curl https://dev.openwrt.org/raw-attachment/ticket/19872/qt_not_available_from_n
 curl https://raw.githubusercontent.com/titobrasolin/openwrt/master/diffconfig > .config
 make defconfig
 # https://wiki.openwrt.org/doc/faq/development#building_on_multi-core_cpu
-time make -j$(($(nproc)+1)) V=s
+time make -j$(($(nproc)+1)) # V=s
