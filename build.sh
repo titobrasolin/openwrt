@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-OPENWRT_GIT_REPO=git://git.openwrt.org/15.05/openwrt.git
+OPENWRT_GIT_REPO=git://git.openwrt.org/openwrt.git
 OPENWRT_GIT_BRANCH=master
 
 # sudo apt-get update
