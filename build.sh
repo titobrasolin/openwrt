@@ -6,6 +6,8 @@ OPENWRT_GIT_BRANCH=master
 # sudo apt-get update
 # sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip gawk
 # sudo apt-get install subversion mercurial
+# sudo apt-get install openjdk-7-jdk
+# sudo apt-get install qt4-dev-tools
 
 echo "============================================================================="
 echo "$(date -u) - Cloning OpenWrt git repository."
