@@ -15,7 +15,7 @@ echo "==========================================================================
 git clone --depth 1 -b $OPENWRT_GIT_BRANCH $OPENWRT_GIT_REPO openwrt
 cd openwrt
 cp feeds.conf.default feeds.conf
-echo "src-git xorg https://github.com/titobrasolin/openwrt-feeds-xorg.git" >> feeds.conf
+echo "src-git xorg https://github.com/mkschreder/openwrt-xorg-feed.git" >> feeds.conf
 
 echo "============================================================================="
 echo "$(date -u) - Updating package feeds."
