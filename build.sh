@@ -21,8 +21,21 @@ echo "==========================================================================
 echo "$(date -u) - Updating package feeds."
 echo "============================================================================="
 ./scripts/feeds update -a
+
+echo "============================================================================="
+echo "$(date -u) - Downloading libmodbus patch."
+echo "============================================================================="
+curl https://github.com/titobrasolin/libmodbus/commit/b9d65dcbef2613c818ab420b6089d5d95b366d3a.patch \
+   --create-dirs -o ./feeds/packages/libs/libmodbus/patches/010-modbus_reply_raw_response.patch
+
+echo "============================================================================="
+echo "$(date -u) - Installing package feeds."
+echo "============================================================================="
 ./scripts/feeds install -a
 
+echo "============================================================================="
+echo "$(date -u) - Configuring and building."
+echo "============================================================================="
 curl https://raw.githubusercontent.com/titobrasolin/openwrt/master/diffconfig > .config
 make defconfig
 # https://wiki.openwrt.org/doc/faq/development#building_on_multi-core_cpu
