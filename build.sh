@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-OPENWRT_GIT_REPO=git://git.openwrt.org/openwrt.git
+OPENWRT_GIT_REPO=https://github.com/openwrt/openwrt.git
 OPENWRT_GIT_BRANCH=master
 
 # sudo apt-get update
@@ -12,7 +12,8 @@ OPENWRT_GIT_BRANCH=master
 echo "============================================================================="
 echo "$(date -u) - Cloning OpenWrt git repository."
 echo "============================================================================="
-git clone --depth 1 -b $OPENWRT_GIT_BRANCH $OPENWRT_GIT_REPO openwrt
+# https://dev.openwrt.org/wiki/GetSource
+git clone -b $OPENWRT_GIT_BRANCH $OPENWRT_GIT_REPO openwrt
 cd openwrt
 cp feeds.conf.default feeds.conf
 echo "src-git xorg https://github.com/mkschreder/openwrt-xorg-feed.git" >> feeds.conf
@@ -25,6 +26,7 @@ echo "==========================================================================
 echo "============================================================================="
 echo "$(date -u) - Downloading libmodbus patch."
 echo "============================================================================="
+# See also: https://github.com/stephane/libmodbus/pull/111
 curl https://github.com/titobrasolin/libmodbus/commit/b9d65dcbef2613c818ab420b6089d5d95b366d3a.patch \
    --create-dirs -o ./feeds/packages/libs/libmodbus/patches/010-modbus_reply_raw_response.patch
 
