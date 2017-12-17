@@ -13,7 +13,7 @@ echo "==========================================================================
 echo "$(date -u) - Cloning OpenWrt git repository."
 echo "============================================================================="
 # https://dev.openwrt.org/wiki/GetSource
-git clone -b $OPENWRT_GIT_BRANCH $OPENWRT_GIT_REPO openwrt
+git clone --depth 1 -b $OPENWRT_GIT_BRANCH $OPENWRT_GIT_REPO openwrt
 cd openwrt
 cp feeds.conf.default feeds.conf
 echo "src-git xorg https://github.com/mkschreder/openwrt-xorg-feed.git" >> feeds.conf
